@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="v8engine" class="com.netcracker.beans.V8"/>
+    <bean id="diesielengine" class="com.netcracker.beans.Disel"/>
+
+    <!--Constructor-based injection-->
+   <!-- <bean id="vw-tiguan" class="com.netcracker.beans.Car" scope="prototype">
+
+        <constructor-arg ref="diesielengine"/>
+        <constructor-arg  value="13123dedede"/>
+    </bean>
+    <bean id="skoda-rapid" class="com.netcracker.beans.Car" scope="prototype">
+
+        <constructor-arg ref="v8engine"/>
+        <constructor-arg  value="13123ded27653253763ede"/>
+    </bean>-->
+    <!--Setter Base ingection-->
+    <bean id="vw-tiguan" class="com.netcracker.beans.Car" scope="prototype">
+        <property name="iEngen" ref="v8engine"/>
+       <property name="vin" value="2357625376253gff"/>
+    </bean>
+    <bean id="skoda-rapid" class="com.netcracker.beans.Car" scope="prototype">
+        <property name="iEngen" ref="diesielengine"/>
+        <property name="vin" value="235762537twtrerw6253gff"/>
+    </bean>
+</beans>
